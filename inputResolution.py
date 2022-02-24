@@ -1,4 +1,4 @@
-fileName="a_an_example.in"
+fileName="b_better_start_small.in"
 inputFile=open("D:/HashCode/input_data/"+fileName+".txt")
 lines = inputFile.readlines()
 filteredLines=[]
@@ -55,14 +55,20 @@ while(parsingIndex<len(filteredLines)):
 
 print("contributors")
 print(contributors)
-print()
-print()
-print("projects")
+# print("\nprojects")
 # print(projectMap)
 
 skillBasedContributorMap={}
 for contributor in contributors:
-	for skillLis in contributors[contributor]:
-		print(contributor)
-		print(skillLis)
-		print()
+	for skill in contributors[contributor]:		
+		skillMap={}
+		skillLevel=contributors[contributor][skill]
+		skillMap[contributor]=skillLevel
+		if(skill in skillBasedContributorMap):
+			# skill.append(skillMap)
+			skillBasedContributorMap[skill].append(skillMap)
+		else:
+			skillBasedContributorMap[skill]=[skillMap]
+
+print("\nskillBasedContributorMap")
+print(skillBasedContributorMap)
