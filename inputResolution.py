@@ -1,5 +1,7 @@
+import operator
+
 fileName="b_better_start_small.in"
-inputFile=open("D:/HashCode/input_data/"+fileName+".txt")
+inputFile=open("./input_data/"+fileName+".txt")
 lines = inputFile.readlines()
 filteredLines=[]
 for line in lines:
@@ -50,8 +52,13 @@ while(parsingIndex<len(filteredLines)):
 		roleName=roleLis[0]
 		roleLevel=int(roleLis[1])
 		roleMap[roleName]=roleLevel
+	logic1=(projectParams["score"]+1)/(projectParams["maxDays"]-projectParams["duration"]+1)
+	projectParams["logic1"]=logic1
+
 	projectParams["roleRequirement"]=roleMap
 	projectMap[projectName]=projectParams
+projectParams = sorted(projectParams.values(), key=operator.attrgetter())
+
 
 print("contributors")
 print(contributors)
