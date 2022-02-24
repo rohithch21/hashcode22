@@ -1,5 +1,5 @@
-fileName="a_an_example.in"
-inputFile=open("./input_data/"+fileName+".txt")
+fileName="b_better_start_small.in"
+inputFile=open("D:/HashCode/input_data/"+fileName+".txt")
 lines = inputFile.readlines()
 filteredLines=[]
 for line in lines:
@@ -66,9 +66,10 @@ for contributor in contributors:
 		skillMap[contributor]=skillLevel
 		if(skill in skillBasedContributorMap):
 			# skill.append(skillMap)
-			skillBasedContributorMap[skill].append(skillMap)
+			# skillBasedContributorMap[skill].append(skillMap)
+			skillBasedContributorMap[skill][contributor]=skillLevel
 		else:
-			skillBasedContributorMap[skill]=[skillMap]
+			skillBasedContributorMap[skill]=skillMap
 
 print("\nskillBasedContributorMap")
 print(skillBasedContributorMap)
