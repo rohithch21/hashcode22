@@ -55,14 +55,20 @@ while(parsingIndex<len(filteredLines)):
 
 print("contributors")
 print(contributors)
-print()
-print()
-print("projects")
-print(projectMap)
+# print("\nprojects")
+# print(projectMap)
 
-# skillBasedContributorMap={}
-# for contributor in contributors:
-# 	for skillLis in contributors[contributor]:
-# 		print(contributor)
-# 		print(skillLis)
-# 		print()
+skillBasedContributorMap={}
+for contributor in contributors:
+	for skill in contributors[contributor]:		
+		skillMap={}
+		skillLevel=contributors[contributor][skill]
+		skillMap[contributor]=skillLevel
+		if(skill in skillBasedContributorMap):
+			# skill.append(skillMap)
+			skillBasedContributorMap[skill].append(skillMap)
+		else:
+			skillBasedContributorMap[skill]=[skillMap]
+
+print("\nskillBasedContributorMap")
+print(skillBasedContributorMap)
