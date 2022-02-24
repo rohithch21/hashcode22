@@ -1,5 +1,5 @@
 fileName="a_an_example.in"
-inputFile=open("D:/HashCode/input_data/"+fileName+".txt")
+inputFile=open("./input_data/"+fileName+".txt")
 lines = inputFile.readlines()
 filteredLines=[]
 for line in lines:
@@ -58,11 +58,11 @@ print(contributors)
 print()
 print()
 print("projects")
-# print(projectMap)
+print(projectMap)
 
-skillBasedContributorMap={}
-for contributor in contributors:
-	for skillLis in contributors[contributor]:
-		print(contributor)
-		print(skillLis)
-		print()
+# skillBasedContributorMap={}
+# for contributor in contributors:
+# 	for skillLis in contributors[contributor]:
+# 		print(contributor)
+# 		print(skillLis)
+# 		print()
